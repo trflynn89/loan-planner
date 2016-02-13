@@ -1,0 +1,436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>loan_planner package &mdash; loan-planner 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="loan-planner 1.0 documentation" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="loan-planner-package">
+<h1>loan_planner package<a class="headerlink" href="#loan-planner-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-loan_planner.heuristics">
+<span id="loan-planner-heuristics-module"></span><h2>loan_planner.heuristics module<a class="headerlink" href="#module-loan_planner.heuristics" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="loan_planner.heuristics.first_loan_heuristic">
+<code class="descclassname">loan_planner.heuristics.</code><code class="descname">first_loan_heuristic</code><span class="sig-paren">(</span><em>loans</em>, <em>daysSinceLastPayment</em><span class="sig-paren">)</span><a class="headerlink" href="#loan_planner.heuristics.first_loan_heuristic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the first loan in the list.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="loan_planner.heuristics.is_heuristic_function">
+<code class="descclassname">loan_planner.heuristics.</code><code class="descname">is_heuristic_function</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#loan_planner.heuristics.is_heuristic_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true if the given object represents a heuristic function.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="loan_planner.heuristics.max_balance_heuristic">
+<code class="descclassname">loan_planner.heuristics.</code><code class="descname">max_balance_heuristic</code><span class="sig-paren">(</span><em>loans</em>, <em>daysSinceLastPayment</em><span class="sig-paren">)</span><a class="headerlink" href="#loan_planner.heuristics.max_balance_heuristic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the loan with the highest balance.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="loan_planner.heuristics.max_interest_accrual_heuristic">
+<code class="descclassname">loan_planner.heuristics.</code><code class="descname">max_interest_accrual_heuristic</code><span class="sig-paren">(</span><em>loans</em>, <em>daysSinceLastPayment</em><span class="sig-paren">)</span><a class="headerlink" href="#loan_planner.heuristics.max_interest_accrual_heuristic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the loan which accrues the most interest in a year.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="loan_planner.heuristics.max_interest_rate_heuristic">
+<code class="descclassname">loan_planner.heuristics.</code><code class="descname">max_interest_rate_heuristic</code><span class="sig-paren">(</span><em>loans</em>, <em>daysSinceLastPayment</em><span class="sig-paren">)</span><a class="headerlink" href="#loan_planner.heuristics.max_interest_rate_heuristic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the loan with the highest interest rate.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="loan_planner.heuristics.max_ipr_heuristic">
+<code class="descclassname">loan_planner.heuristics.</code><code class="descname">max_ipr_heuristic</code><span class="sig-paren">(</span><em>loans</em>, <em>daysSinceLastPayment</em><span class="sig-paren">)</span><a class="headerlink" href="#loan_planner.heuristics.max_ipr_heuristic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the loan with the highest interest-to-monthly-payment ratio.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="loan_planner.heuristics.min_percent_payment_applied_heuristic">
+<code class="descclassname">loan_planner.heuristics.</code><code class="descname">min_percent_payment_applied_heuristic</code><span class="sig-paren">(</span><em>loans</em>, <em>daysSinceLastPayment</em><span class="sig-paren">)</span><a class="headerlink" href="#loan_planner.heuristics.min_percent_payment_applied_heuristic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the loan with the lowest percentage of its monthly payment applied
+to the loan&#8217;s principal.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="loan_planner.heuristics.random_heuristic">
+<code class="descclassname">loan_planner.heuristics.</code><code class="descname">random_heuristic</code><span class="sig-paren">(</span><em>loans</em>, <em>daysSinceLastPayment</em><span class="sig-paren">)</span><a class="headerlink" href="#loan_planner.heuristics.random_heuristic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a random loan.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-loan_planner.loan_config">
+<span id="loan-planner-loan-config-module"></span><h2>loan_planner.loan_config module<a class="headerlink" href="#module-loan_planner.loan_config" title="Permalink to this headline">¶</a></h2>
+<p>loan_config</p>
+<dl class="class">
+<dt id="loan_planner.loan_config.Loan">
+<em class="property">class </em><code class="descclassname">loan_planner.loan_config.</code><code class="descname">Loan</code><span class="sig-paren">(</span><em>name</em>, <em>balance</em>, <em>interestRate</em>, <em>monthlyPayment</em>, <em>paymentDay</em><span class="sig-paren">)</span><a class="headerlink" href="#loan_planner.loan_config.Loan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class to store data pertaining to a loan.</p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#loan_planner.loan_config.Loan.get_interest_accrued" title="loan_planner.loan_config.Loan.get_interest_accrued"><code class="xref py py-obj docutils literal"><span class="pre">get_interest_accrued</span></code></a>(daysAccrued)</td>
+<td>Calculate the amount of interest accrued in the given number of days.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#loan_planner.loan_config.Loan.get_interest_to_payment_ratio" title="loan_planner.loan_config.Loan.get_interest_to_payment_ratio"><code class="xref py py-obj docutils literal"><span class="pre">get_interest_to_payment_ratio</span></code></a>(daysAccrued)</td>
+<td>Calcuate the ratio of the interest paid over a period of time to the monthly payment.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#loan_planner.loan_config.Loan.get_payment_amount" title="loan_planner.loan_config.Loan.get_payment_amount"><code class="xref py py-obj docutils literal"><span class="pre">get_payment_amount</span></code></a>()</td>
+<td>Return the monthly payment amount, or the loan balance if the balance is less than the monthly payment.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="loan_planner.loan_config.Loan.get_interest_accrued">
+<code class="descname">get_interest_accrued</code><span class="sig-paren">(</span><em>daysAccrued</em><span class="sig-paren">)</span><a class="headerlink" href="#loan_planner.loan_config.Loan.get_interest_accrued" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the amount of interest accrued in the given number of days.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="loan_planner.loan_config.Loan.get_interest_to_payment_ratio">
+<code class="descname">get_interest_to_payment_ratio</code><span class="sig-paren">(</span><em>daysAccrued</em><span class="sig-paren">)</span><a class="headerlink" href="#loan_planner.loan_config.Loan.get_interest_to_payment_ratio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calcuate the ratio of the interest paid over a period of time to the
+monthly payment.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="loan_planner.loan_config.Loan.get_payment_amount">
+<code class="descname">get_payment_amount</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#loan_planner.loan_config.Loan.get_payment_amount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the monthly payment amount, or the loan balance if the balance
+is less than the monthly payment.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="loan_planner.loan_config.LoanConfig">
+<em class="property">class </em><code class="descclassname">loan_planner.loan_config.</code><code class="descname">LoanConfig</code><span class="sig-paren">(</span><em>loanConfigFilePath</em><span class="sig-paren">)</span><a class="headerlink" href="#loan_planner.loan_config.LoanConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Configuration options for the loan planner.</p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#loan_planner.loan_config.LoanConfig.any_changes" title="loan_planner.loan_config.LoanConfig.any_changes"><code class="xref py py-obj docutils literal"><span class="pre">any_changes</span></code></a>()</td>
+<td>Return true if there were any plan changes in the global options.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#loan_planner.loan_config.LoanConfig.parsed" title="loan_planner.loan_config.LoanConfig.parsed"><code class="xref py py-obj docutils literal"><span class="pre">parsed</span></code></a>()</td>
+<td>Return true if the INI file has been parsed successfully.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="loan_planner.loan_config.LoanConfig.BALANCE">
+<code class="descname">BALANCE</code><em class="property"> = 'Balance'</em><a class="headerlink" href="#loan_planner.loan_config.LoanConfig.BALANCE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="loan_planner.loan_config.LoanConfig.DATE_FORMAT">
+<code class="descname">DATE_FORMAT</code><em class="property"> = '%m/%d/%Y'</em><a class="headerlink" href="#loan_planner.loan_config.LoanConfig.DATE_FORMAT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="loan_planner.loan_config.LoanConfig.DATE_OF_BIRTH">
+<code class="descname">DATE_OF_BIRTH</code><em class="property"> = 'DateOfBirth'</em><a class="headerlink" href="#loan_planner.loan_config.LoanConfig.DATE_OF_BIRTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="loan_planner.loan_config.LoanConfig.DEFAULTS">
+<code class="descname">DEFAULTS</code><em class="property"> = {'UpfrontPayment': '0', 'MonthlyIncrease': '0', 'MonthlyPayment': '0', 'PaymentDay': '1', 'DateOfBirth': '1/1/1900', 'InterestRate': '0', 'Balance': '0'}</em><a class="headerlink" href="#loan_planner.loan_config.LoanConfig.DEFAULTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="loan_planner.loan_config.LoanConfig.INTEREST_RATE">
+<code class="descname">INTEREST_RATE</code><em class="property"> = 'InterestRate'</em><a class="headerlink" href="#loan_planner.loan_config.LoanConfig.INTEREST_RATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="loan_planner.loan_config.LoanConfig.MONTHLY_INCREASE">
+<code class="descname">MONTHLY_INCREASE</code><em class="property"> = 'MonthlyIncrease'</em><a class="headerlink" href="#loan_planner.loan_config.LoanConfig.MONTHLY_INCREASE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="loan_planner.loan_config.LoanConfig.MONTHLY_PAYMENT">
+<code class="descname">MONTHLY_PAYMENT</code><em class="property"> = 'MonthlyPayment'</em><a class="headerlink" href="#loan_planner.loan_config.LoanConfig.MONTHLY_PAYMENT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="loan_planner.loan_config.LoanConfig.OPTIONS">
+<code class="descname">OPTIONS</code><em class="property"> = 'Options'</em><a class="headerlink" href="#loan_planner.loan_config.LoanConfig.OPTIONS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="loan_planner.loan_config.LoanConfig.PAYMENT_DAY">
+<code class="descname">PAYMENT_DAY</code><em class="property"> = 'PaymentDay'</em><a class="headerlink" href="#loan_planner.loan_config.LoanConfig.PAYMENT_DAY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="loan_planner.loan_config.LoanConfig.UPFRONT_PAYMENT">
+<code class="descname">UPFRONT_PAYMENT</code><em class="property"> = 'UpfrontPayment'</em><a class="headerlink" href="#loan_planner.loan_config.LoanConfig.UPFRONT_PAYMENT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="loan_planner.loan_config.LoanConfig.any_changes">
+<code class="descname">any_changes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#loan_planner.loan_config.LoanConfig.any_changes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true if there were any plan changes in the global options.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="loan_planner.loan_config.LoanConfig.parsed">
+<code class="descname">parsed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#loan_planner.loan_config.LoanConfig.parsed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true if the INI file has been parsed successfully.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-loan_planner.loan_planner">
+<span id="loan-planner-loan-planner-module"></span><h2>loan_planner.loan_planner module<a class="headerlink" href="#module-loan_planner.loan_planner" title="Permalink to this headline">¶</a></h2>
+<p>Simulate the payment of a set of loans to suggest an improved payment plan.</p>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>python loan_planner.py -c loans.ini</p>
+<dl class="class">
+<dt id="loan_planner.loan_planner.LoanPlanner">
+<em class="property">class </em><code class="descclassname">loan_planner.loan_planner.</code><code class="descname">LoanPlanner</code><span class="sig-paren">(</span><em>loanConfigFilePath</em><span class="sig-paren">)</span><a class="headerlink" href="#loan_planner.loan_planner.LoanPlanner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class to evaluate loan payment plans using a variety of metrics, taking
+into consideration any user-specified payment changes.</p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#loan_planner.loan_planner.LoanPlanner.find_best_plan" title="loan_planner.loan_planner.LoanPlanner.find_best_plan"><code class="xref py py-obj docutils literal"><span class="pre">find_best_plan</span></code></a>()</td>
+<td>Simulate the payment of all loans before and after changes to the payment plans, using all available metrics.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="loan_planner.loan_planner.LoanPlanner.find_best_plan">
+<code class="descname">find_best_plan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#loan_planner.loan_planner.LoanPlanner.find_best_plan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate the payment of all loans before and after changes to the
+payment plans, using all available metrics. Decide which of all plans
+is the best.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="loan_planner.loan_planner.main">
+<code class="descclassname">loan_planner.loan_planner.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#loan_planner.loan_planner.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-loan_planner.payment_device">
+<span id="loan-planner-payment-device-module"></span><h2>loan_planner.payment_device module<a class="headerlink" href="#module-loan_planner.payment_device" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="loan_planner.payment_device.PaymentDevice">
+<em class="property">class </em><code class="descclassname">loan_planner.payment_device.</code><code class="descname">PaymentDevice</code><span class="sig-paren">(</span><em>dateOfBirth</em>, <em>loans</em>, <em>allocationDecider</em>, <em>bestDevice=None</em><span class="sig-paren">)</span><a class="headerlink" href="#loan_planner.payment_device.PaymentDevice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class to simulate paying loans over time.</p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#loan_planner.payment_device.PaymentDevice.pay_loans" title="loan_planner.payment_device.PaymentDevice.pay_loans"><code class="xref py py-obj docutils literal"><span class="pre">pay_loans</span></code></a>()</td>
+<td>Make monthly loan payments until all loans are paid off.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="loan_planner.payment_device.PaymentDevice.DAYS_PER_MONTH">
+<code class="descname">DAYS_PER_MONTH</code><em class="property"> = 30.436875</em><a class="headerlink" href="#loan_planner.payment_device.PaymentDevice.DAYS_PER_MONTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="loan_planner.payment_device.PaymentDevice.MAX_YEAR">
+<code class="descname">MAX_YEAR</code><em class="property"> = 3000</em><a class="headerlink" href="#loan_planner.payment_device.PaymentDevice.MAX_YEAR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="loan_planner.payment_device.PaymentDevice.ONE_DAY_DELTA">
+<code class="descname">ONE_DAY_DELTA</code><em class="property"> = relativedelta(days=+1)</em><a class="headerlink" href="#loan_planner.payment_device.PaymentDevice.ONE_DAY_DELTA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="loan_planner.payment_device.PaymentDevice.ONE_MONTH_DELTA">
+<code class="descname">ONE_MONTH_DELTA</code><em class="property"> = relativedelta(months=+1)</em><a class="headerlink" href="#loan_planner.payment_device.PaymentDevice.ONE_MONTH_DELTA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="loan_planner.payment_device.PaymentDevice.pay_loans">
+<code class="descname">pay_loans</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#loan_planner.payment_device.PaymentDevice.pay_loans" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make monthly loan payments until all loans are paid off. When a loan is
+paid, reallocate that loan&#8217;s monthly payment to another loan. Return a
+boolean indicating if the simulation was successful.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="loan_planner.payment_device.PaymentStats">
+<em class="property">class </em><code class="descclassname">loan_planner.payment_device.</code><code class="descname">PaymentStats</code><span class="sig-paren">(</span><em>dateOfBirth</em>, <em>isRelative=False</em><span class="sig-paren">)</span><a class="headerlink" href="#loan_planner.payment_device.PaymentStats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class to store statistics about a payment device, or a comparison of two
+sets of statistics about payment devices.</p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#loan_planner.payment_device.PaymentStats.compare" title="loan_planner.payment_device.PaymentStats.compare"><code class="xref py py-obj docutils literal"><span class="pre">compare</span></code></a>(other)</td>
+<td>Construct a PaymentStats instance to represent the comparison of these payment statistics to another set of statistics.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="loan_planner.payment_device.PaymentStats.compare">
+<code class="descname">compare</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#loan_planner.payment_device.PaymentStats.compare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a PaymentStats instance to represent the comparison of these
+payment statistics to another set of statistics.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="loan_planner.payment_device.get_age_on_date">
+<code class="descclassname">loan_planner.payment_device.</code><code class="descname">get_age_on_date</code><span class="sig-paren">(</span><em>dateOfBirth</em>, <em>date</em><span class="sig-paren">)</span><a class="headerlink" href="#loan_planner.payment_device.get_age_on_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine the age a person would be on the given date.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="loan_planner.payment_device.to_months">
+<code class="descclassname">loan_planner.payment_device.</code><code class="descname">to_months</code><span class="sig-paren">(</span><em>timeDiff</em><span class="sig-paren">)</span><a class="headerlink" href="#loan_planner.payment_device.to_months" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a relativedelta instance to raw months.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-loan_planner">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-loan_planner" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">loan_planner package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-loan_planner.heuristics">loan_planner.heuristics module</a></li>
+<li><a class="reference internal" href="#module-loan_planner.loan_config">loan_planner.loan_config module</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-loan_planner.loan_planner">loan_planner.loan_planner module</a><ul>
+<li><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-loan_planner.payment_device">loan_planner.payment_device module</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-loan_planner">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/loan_planner.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Timothy Flynn (trflynn89@gmail.com).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/loan_planner.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
