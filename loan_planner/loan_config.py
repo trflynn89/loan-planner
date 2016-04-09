@@ -56,6 +56,9 @@ class LoanConfig(object):
     MONTHLY_PAYMENT = 'MonthlyPayment'
     PAYMENT_DAY = 'PaymentDay'
 
+    # Average number of days per month according to Gregorian calendar
+    DAYS_PER_MONTH = 30.436875
+
     DEFAULTS = {
         UPFRONT_PAYMENT : '0',
         MONTHLY_INCREASE : '0',
@@ -95,14 +98,15 @@ class LoanConfig(object):
             name = loan.name
             balance = loan.balance
             interestRate = loan.interestRate * 100.0
+            interestAccrued = loan.get_interest_accrued(LoanConfig.DAYS_PER_MONTH)
 
-            loans.append((name, balance, interestRate))
+            loans.append((name, balance, interestRate, interestAccrued))
 
         loans.sort(key=lambda k: (k[2], k[1]), reverse=True)
         ret += '\nCurrent loans:\n\n'
 
         for loan in loans:
-            ret += '\t%s: $%s at %.2f%%\n' % (loan[0], loan[1], loan[2])
+            ret += '\t{:s}: ${:.2f} at {:.2f}% (${:.2f})\n'.format(*loan)
 
         return ret
 

@@ -12,7 +12,7 @@ def to_months(timeDiff):
     '''
     months  = timeDiff.years * 12
     months += timeDiff.months
-    months += timeDiff.days / PaymentDevice.DAYS_PER_MONTH
+    months += timeDiff.days / loan_config.LoanConfig.DAYS_PER_MONTH
 
     return int(round(months))
 
@@ -80,9 +80,6 @@ class PaymentDevice(object):
     '''
     ONE_DAY_DELTA = relativedelta.relativedelta(days=1)
     ONE_MONTH_DELTA = relativedelta.relativedelta(months=1)
-
-    # Average number of days per month according to Gregorian calendar
-    DAYS_PER_MONTH = 30.436875
 
     # If this year is reached, stop the simulation
     MAX_YEAR = 3000
@@ -219,7 +216,7 @@ class PaymentDevice(object):
             loans = getEligibleLoans()
 
             if loans:
-                loan = self.allocationDecider(loans, PaymentDevice.DAYS_PER_MONTH)
+                loan = self.allocationDecider(loans, loan_config.LoanConfig.DAYS_PER_MONTH)
 
                 increasedLoans[loan] += 1
                 loan.monthlyPayment += 1

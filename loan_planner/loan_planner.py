@@ -124,13 +124,13 @@ class LoanPlanner(object):
         paid = lambda x: x.balance <= 0
 
         for dollar in range(int(self.loanConfig.upfrontPayment)):
-            loan = heuristic(filter(unpaid, loans), payment_device.PaymentDevice.DAYS_PER_MONTH)
+            loan = heuristic(filter(unpaid, loans), loan_config.LoanConfig.DAYS_PER_MONTH)
             loan.upfrontPayment += 1
             loan.balance -= 1
 
         for loan in filter(paid, loans):
             for dollar in range(int(loan.monthlyPayment)):
-                loan2 = heuristic(filter(unpaid, loans), payment_device.PaymentDevice.DAYS_PER_MONTH)
+                loan2 = heuristic(filter(unpaid, loans), loan_config.LoanConfig.DAYS_PER_MONTH)
                 loan2.monthlyIncrease += 1
                 loan2.monthlyPayment += 1
 
@@ -142,7 +142,7 @@ class LoanPlanner(object):
         unpaid = lambda x: x.balance > 0
 
         for dollar in range(int(self.loanConfig.monthlyIncrease)):
-            loan = heuristic(filter(unpaid, loans), payment_device.PaymentDevice.DAYS_PER_MONTH)
+            loan = heuristic(filter(unpaid, loans), loan_config.LoanConfig.DAYS_PER_MONTH)
             loan.monthlyIncrease += 1
             loan.monthlyPayment += 1
 
